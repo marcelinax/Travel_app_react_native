@@ -1,11 +1,13 @@
 import React from 'react';
 import {NativeRouter, Route} from 'react-router-native';
 import HomeScreen from './screens/Home.screen';
+import PreviewOfferScreen from './screens/PreviewOffer.screen';
 
 const App = () => {
   return (
     <NativeRouter>
       <Route component={HomeScreen} exact path={'/'} />
+      <Route component={PreviewOfferScreen} path={'/offer'} />
     </NativeRouter>
   );
 };
