@@ -4,11 +4,18 @@ import CityNameHeading from './CityNameHeading';
 import TravelItemStarsBox from './TravelItemStarsBox';
 import TravelListItemStyles from '../assets/styles/TravelListItem.styles';
 import {useHistory} from 'react-router';
+import {useDispatch} from 'react-redux';
+import {setCurrentResort} from '../state/resortsSlice';
 
-const TravelListItem = ({resort, img}) => {
+const TravelListItem = ({resort, img, id}) => {
   const history = useHistory();
+  const dispatch = useDispatch();
   return (
-    <TouchableOpacity onPress={() => history.push('/offer')}>
+    <TouchableOpacity
+      onPress={() => {
+        history.push('/offer');
+        dispatch(setCurrentResort({id}));
+      }}>
       <View style={{...TravelListItemStyles.travelItemBox}}>
         <View style={{flex: 1, borderRadius: 20, overflow: 'hidden'}}>
           <ImageBackground

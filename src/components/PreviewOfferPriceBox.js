@@ -2,14 +2,14 @@ import React from 'react';
 import {Text, TouchableWithoutFeedback, View} from 'react-native';
 import PreviewOfferStyles from '../assets/styles/PreviewOffer.styles';
 
-const PreviewOfferPriceBox = () => {
+const PreviewOfferPriceBox = ({price}) => {
   return (
     <View style={{...PreviewOfferStyles.priceBox}}>
       <View>
         <Text style={{color: '#6988BD', fontWeight: '500', fontSize: 12}}>
           Price per person
         </Text>
-        <Text style={{...PreviewOfferStyles.price}}>$ 1450</Text>
+        <Text style={{...PreviewOfferStyles.price}}>$ {price}</Text>
       </View>
       <TouchableWithoutFeedback>
         <View style={{...PreviewOfferStyles.button}}>

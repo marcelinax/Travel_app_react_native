@@ -13,6 +13,7 @@ const TravelList = () => {
           resort={resort.name}
           img={resort.imgUrl}
           key={resort.id}
+          id={resort.id}
         />
       ))
     ) : (

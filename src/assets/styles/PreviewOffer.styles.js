@@ -38,6 +38,7 @@ const PreviewOfferStyles = StyleSheet.create({
   infoBoxBottom: {
     padding: 32,
     flex: 1,
+    marginBottom: 50,
   },
   description: {
     color: '#D0D2DA',
@@ -86,6 +87,16 @@ const PreviewOfferStyles = StyleSheet.create({
     top: 30,
     left: 30,
     zIndex: 2,
+  },
+  infoBoxBottomIcon: {
+    height: 30,
+    marginRight: 10,
+    width: 30,
+  },
+  infoBoxBottomHeading: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#1F2834',
   },
 });
 
