@@ -4,7 +4,7 @@ import TravelListItem from './TravelListItem';
 
 const TravelList = () => {
   return (
-    <View style={{height: '100%', flex: 1}}>
+    <View style={{height: '100%', flex: 1, marginTop: 25}}>
       <ScrollView style={{flex: 1}}>
         <TravelListItem />
         <TravelListItem />

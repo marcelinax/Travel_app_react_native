@@ -13,7 +13,7 @@ const PreviewOfferInfoBoxTop = () => {
       <View style={{...PreviewOfferStyles.iconsBox}}>
         <View style={{...PreviewOfferStyles.iconBox}}>
           <Image source={star} style={{...PreviewOfferStyles.icon}} />
-          <Text style={{...PreviewOfferStyles.iconText}}>4/5</Text>
+          <Text style={{color: '#E2B477', fontWeight: '700'}}>4.5</Text>
         </View>
         <View style={{...PreviewOfferStyles.iconBox}}>
           <Image source={cloud} style={{...PreviewOfferStyles.icon}} />
