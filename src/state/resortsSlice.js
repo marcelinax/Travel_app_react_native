@@ -5,6 +5,7 @@ const resortsSlice = createSlice({
   initialState: {
     resorts: [],
     currentResort: {},
+    currentCountry: 'All',
   },
   reducers: {
     setResorts: (state, action) => {
@@ -15,8 +16,12 @@ const resortsSlice = createSlice({
       const resortId = state.resorts.map(resort => resort.id).indexOf(id);
       state.currentResort = state.resorts[resortId];
     },
+    setCurrentCountry: (state, action) => {
+      state.currentCountry = action.payload;
+    },
   },
 });
 
-export const {setResorts, setCurrentResort} = resortsSlice.actions;
+export const {setResorts, setCurrentResort, setCurrentCountry} =
+  resortsSlice.actions;
 export default resortsSlice.reducer;

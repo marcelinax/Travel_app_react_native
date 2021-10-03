@@ -11,13 +11,17 @@ const PreviewOfferInfoBoxBottom = () => {
   const currentResort = useSelector(state => state.resorts.currentResort);
 
   const renderHotelFacilities = () => {
-    return currentResort.facilities.hotel.map(item => (
-      <Text style={{...PreviewOfferStyles.description}}>{item}</Text>
+    return currentResort.facilities.hotel.map((item, index) => (
+      <Text style={{...PreviewOfferStyles.description}} key={index}>
+        {item}
+      </Text>
     ));
   };
   const renderHotelAttractions = () => {
-    return currentResort.facilities.attractions.map(item => (
-      <Text style={{...PreviewOfferStyles.description}}>{item}</Text>
+    return currentResort.facilities.attractions.map((item, index) => (
+      <Text style={{...PreviewOfferStyles.description}} key={index}>
+        {item}
+      </Text>
     ));
   };
 

@@ -6,7 +6,8 @@ const PreviewOfferImageBox = ({imgUrl}) => {
   return (
     <View
       style={{
-        flex: 1,
+        // flex: 1,
+        height: 250,
         overflow: 'hidden',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,

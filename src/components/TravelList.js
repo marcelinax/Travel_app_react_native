@@ -5,20 +5,45 @@ import {useSelector} from 'react-redux';
 
 const TravelList = () => {
   const resorts = useSelector(state => state.resorts.resorts);
+  const currentCountry = useSelector(state => state.resorts.currentCountry);
 
   const renderResorts = () => {
-    return resorts.length > 0 ? (
-      resorts.map(resort => (
-        <TravelListItem
-          resort={resort.name}
-          img={resort.imgUrl}
-          key={resort.id}
-          id={resort.id}
-        />
-      ))
-    ) : (
-      <></>
-    );
+    if (currentCountry === 'All') {
+      return resorts.length > 0 ? (
+        resorts.map(resort => (
+          <TravelListItem
+            resort={resort.name}
+            img={resort.imgUrl}
+            key={resort.id}
+            id={resort.id}
+            country={resort.country}
+            price={resort.price}
+            rating={resort.rating}
+          />
+        ))
+      ) : (
+        <></>
+      );
+    } else {
+      if (resorts.length > 0) {
+        const resortsInCurrentCountry = resorts.filter(
+          resort => resort.country === currentCountry,
+        );
+        return resortsInCurrentCountry.map(resort => (
+          <TravelListItem
+            resort={resort.name}
+            img={resort.imgUrl}
+            key={resort.id}
+            id={resort.id}
+            country={resort.country}
+            price={resort.price}
+            rating={resort.rating}
+          />
+        ));
+      } else {
+        return <></>;
+      }
+    }
   };
 
   return (

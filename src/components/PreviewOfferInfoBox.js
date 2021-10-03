@@ -24,7 +24,6 @@ const PreviewOfferInfoBox = () => {
 
   return (
     <View style={{flex: 1, padding: 16}}>
-      {console.log(weather)}
       <PreviewOfferInfoBoxTop
         rating={currentResort.rating}
         days={currentResort.days}

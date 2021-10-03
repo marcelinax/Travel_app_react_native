@@ -7,11 +7,13 @@ import {useHistory} from 'react-router';
 import {useDispatch} from 'react-redux';
 import {setCurrentResort} from '../state/resortsSlice';
 
-const TravelListItem = ({resort, img, id}) => {
+const TravelListItem = ({resort, img, id, country, price, rating}) => {
   const history = useHistory();
   const dispatch = useDispatch();
+
   return (
     <TouchableOpacity
+      activeOpacity={1}
       onPress={() => {
         history.push('/offer');
         dispatch(setCurrentResort({id}));
@@ -29,10 +31,12 @@ const TravelListItem = ({resort, img, id}) => {
         <View
           style={{flex: 1, padding: 16, overflow: 'hidden', borderRadius: 20}}>
           <CityNameHeading city={resort} fontSize={18} />
-          <TravelItemStarsBox />
-          <Text style={{color: '#D2D3DC', fontWeight: '600'}}>
-            Miejsce to ID, tytuł, opis, ocena, pogoda, ilość osób jaka może
-            jechać i cena za jedną osobę oraz url do zdjecia
+          <TravelItemStarsBox rating={rating} />
+          <Text style={{color: '#D2D3DC', fontWeight: '600', marginTop: 10}}>
+            {country}
+          </Text>
+          <Text style={{color: '#64B3D9', fontWeight: '600', marginTop: 10}}>
+            $ {price}
           </Text>
         </View>
       </View>

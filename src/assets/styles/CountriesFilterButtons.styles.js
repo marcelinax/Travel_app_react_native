@@ -6,6 +6,11 @@ const CountriesFilterButtonsStyles = StyleSheet.create({
     fontWeight: '700',
     marginRight: 32,
   },
+  activeBtn: {
+    color: '#64B3D9',
+    fontWeight: '700',
+    marginRight: 32,
+  },
 });
 
 export default CountriesFilterButtonsStyles;

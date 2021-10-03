@@ -2,10 +2,16 @@ import React from 'react';
 import {Text, TouchableWithoutFeedback} from 'react-native';
 import CountriesFilterButtonsStyles from '../assets/styles/CountriesFilterButtons.styles';
 
-const CountryFilterButton = ({country}) => {
+const CountryFilterButton = ({country, setCurrentCountry, isActive}) => {
   return (
-    <TouchableWithoutFeedback>
-      <Text style={{...CountriesFilterButtonsStyles.button}}>{country}</Text>
+    <TouchableWithoutFeedback onPress={setCurrentCountry}>
+      {isActive ? (
+        <Text style={{...CountriesFilterButtonsStyles.activeBtn}}>
+          {country}
+        </Text>
+      ) : (
+        <Text style={{...CountriesFilterButtonsStyles.button}}>{country}</Text>
+      )}
     </TouchableWithoutFeedback>
   );
 };
