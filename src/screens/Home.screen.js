@@ -12,7 +12,7 @@ const HomeScreen = () => {
   const getResorts = () => {
     axios
       .get('https://my-json-server.typicode.com/marcelinax/Travel_db/resorts')
-      .then(res => dispatch(setResorts(res.data.resorts)));
+      .then(res => dispatch(setResorts(res.data)));
   };
 
   useEffect(() => {
