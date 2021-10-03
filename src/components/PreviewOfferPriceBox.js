@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableWithoutFeedback, View} from 'react-native';
 import PreviewOfferStyles from '../assets/styles/PreviewOffer.styles';
 
-const PreviewOfferPriceBox = ({price}) => {
+const PreviewOfferPriceBox = ({price, addToShoppingBag}) => {
   return (
     <View style={{...PreviewOfferStyles.priceBox}}>
       <View>
@@ -11,7 +11,7 @@ const PreviewOfferPriceBox = ({price}) => {
         </Text>
         <Text style={{...PreviewOfferStyles.price}}>$ {price}</Text>
       </View>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={addToShoppingBag}>
         <View style={{...PreviewOfferStyles.button}}>
           <Text style={{fontWeight: '800', color: '#64B3D9', fontSize: 16}}>
             Book it
