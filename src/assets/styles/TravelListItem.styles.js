@@ -4,7 +4,7 @@ const TravelListItemStyles = StyleSheet.create({
   travelItemBox: {
     flexDirection: 'row',
     width: '100%',
-    height: 150,
+    height: 170,
     marginBottom: 20,
     borderRadius: 20,
     backgroundColor: '#F7F7F9',

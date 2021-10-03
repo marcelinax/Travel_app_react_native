@@ -23,26 +23,31 @@ const resortsSlice = createSlice({
     },
     addResortToShoppingBag: (state, action) => {
       const {id} = action.payload;
-      const resortId = state.resorts.map(resort => resort.id).indexOf(id);
+      const resortIndex = state.resorts.map(resort => resort.id).indexOf(id);
       if (state.shoppingBag.map(item => item.id).includes(id)) {
-        state.shoppingBagItemsAmount[resortId] =
-          state.shoppingBagItemsAmount[resortId] + 1;
+        const shoppingBagResortIndex = state.shoppingBag
+          .map(resort => resort.id)
+          .indexOf(id);
+        state.shoppingBagItemsAmount[shoppingBagResortIndex] =
+          state.shoppingBagItemsAmount[shoppingBagResortIndex] + 1;
         state.shoppingBagItemsAmount = [...state.shoppingBagItemsAmount];
       } else {
-        state.shoppingBag = [...state.shoppingBag, state.resorts[resortId]];
+        state.shoppingBag = [...state.shoppingBag, state.resorts[resortIndex]];
         state.shoppingBagItemsAmount = [...state.shoppingBagItemsAmount, 1];
       }
     },
     incrementAmountItemInShoppingBag: (state, action) => {
       const {id} = action.payload;
-      const resortId = state.resorts.map(resort => resort.id).indexOf(id);
-      state.shoppingBagItemsAmount[resortId] =
-        state.shoppingBagItemsAmount[resortId] + 1;
+      const resortIndex = state.shoppingBag
+        .map(resort => resort.id)
+        .indexOf(id);
+      state.shoppingBagItemsAmount[resortIndex] =
+        state.shoppingBagItemsAmount[resortIndex] + 1;
       state.shoppingBagItemsAmount = [...state.shoppingBagItemsAmount];
     },
     decrementAmountItemInShoppingBag: (state, action) => {
       const {id} = action.payload;
-      const resortId = state.resorts.map(resort => resort.id).indexOf(id);
+      const resortId = state.shoppingBag.map(resort => resort.id).indexOf(id);
       if (state.shoppingBagItemsAmount[resortId] < 2) {
         state.shoppingBag.splice(resortId, 1);
         state.shoppingBag = [...state.shoppingBag];

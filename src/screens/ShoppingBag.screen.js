@@ -15,10 +15,14 @@ const ShoppingBagScreen = () => {
   );
 
   const getTotalSum = () => {
-    const sum = shoppingBag.map(
-      (item, index) => item.price * shoppingBagItemsAmount[index],
-    );
-    return sum.reduce((acc, cur) => acc + cur);
+    if (shoppingBag.length > 0 && shoppingBagItemsAmount.length > 0) {
+      const sum = shoppingBag.map(
+        (item, index) => item.price * shoppingBagItemsAmount[index],
+      );
+      return sum.reduce((acc, cur) => acc + cur);
+    } else {
+      return 0;
+    }
   };
 
   return (
